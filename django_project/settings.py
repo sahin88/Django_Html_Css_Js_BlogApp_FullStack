@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 import mimetypes
+import django_heroku
 mimetypes.add_type("text/css", ".css", True)
 mimetypes.add_type("text/javascript", ".js", True)
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -148,8 +149,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-# EMAIL_HOST_USER ="msahinnihasm@gmail.com"
-# EMAIL_HOST_PASSWORD ="msahinAa1!"
+
 
 
 
@@ -157,4 +157,4 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = os.environ.get('DB_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('DB_PASS')
 
-# print(os.environ.get('DB_PASS'), os.environ.get('DB_USER'))
+
