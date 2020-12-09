@@ -1,3 +1,3 @@
 release: python manage.py migrate
 
-web: gunicorn   myestate.wsgi --log-file -
+web: gunicorn   django_project.wsgi --log-file -
