@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'f8(c=g*(fza9aarc^_nk=jzvu-h&u_p_crvtbrb$&ekv&h!j3v'
+#SECRET_KEY = 'f8(c=g*(fza9aarc^_nk=jzvu-h&u_p_crvtbrb$&ekv&h!j3v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -146,8 +146,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL = 'blog-home'
 
 LOGIN_URL = 'login'
-
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
@@ -159,7 +157,8 @@ EMAIL_PORT = 587
 
 EMAIL_HOST_USER = os.environ.get('DB_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('DB_PASS')
-
+SECRET_KEY = os.environ.get('SECRET_KEY')
+DEBUG=os.environ.get("DEBUG_VAL")
 
 django_heroku.settings(locals())
 
