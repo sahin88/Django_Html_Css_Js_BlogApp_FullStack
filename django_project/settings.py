@@ -140,9 +140,21 @@ MEDIA_URL = '/media/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # after loginden sonra ulasilmasi gerekir
 LOGIN_REDIRECT_URL = 'blog-home'
-# BUrada login sayfasini tanimliyoruz
+
 LOGIN_URL = 'login'
-EMAIL_BACKED = 'django.core.mail.backends.smtp.EmailBackend'
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+# EMAIL_HOST_USER ="msahinnihasm@gmail.com"
+# EMAIL_HOST_PASSWORD ="msahinAa1!"
+
+
+
+
+EMAIL_HOST_USER = os.environ.get('DB_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('DB_PASS')
+
+# print(os.environ.get('DB_PASS'), os.environ.get('DB_USER'))
