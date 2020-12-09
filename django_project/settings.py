@@ -86,7 +86,10 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+import dj_database_url
 
+db_from_env= dj_database_url.config(conn_max_age=600, ssl_require=True)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -156,5 +159,8 @@ EMAIL_PORT = 587
 
 EMAIL_HOST_USER = os.environ.get('DB_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('DB_PASS')
+
+
+django_heroku.settings(locals())
 
 
