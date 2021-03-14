@@ -10,7 +10,7 @@
   -  User registration, logging
   -  Custom User Model
 
-## Uml Model
+## Uml Diagramm
 ![alt text](https://github.com/sahin88/Django_Html_Css_Js_BlogApp_FullStack/blob/main/polls_models.png)
 
 
